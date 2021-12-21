@@ -42,4 +42,4 @@ app.get('/',function(req,res){
     });
 });
 
-app.listen(5002);
+app.listen(process.env.PORT || 5002);
