@@ -64,28 +64,34 @@ myInput.onkeyup = function() {
   }
  
 }
-function match(username,phone,email,myInput,password2,userValidate,phoneValidate,validateEmail,validatePass,confirmPass)
-{   const uservalidate=userValidate(username);
-  const phonevalidate=phoneValidate(phone);    
-    const emailvalidate=validateEmail(email);   
-    const passvalidate=validatePass(myInput);   
-    const confirmvalidate=confirmPass(password2);   
+// function match(username,phone,email,myInput,password2,userValidate,phoneValidate,validateEmail,validatePass,confirmPass)
+// {   const uservalidate=userValidate(username);
+//   const phonevalidate=phoneValidate(phone);    
+//     const emailvalidate=validateEmail(email);   
+//     const passvalidate=validatePass(myInput);   
+//     const confirmvalidate=confirmPass(password2);   
   
-    if(uservalidate && phonevalidate && emailvalidate && passvalidate && confirmvalidate){
+//     if(uservalidate && phonevalidate && emailvalidate && passvalidate && confirmvalidate){
       
     
-        return true;}
-   else{
-          return false;
+//         return true;}
+//    else{
+//           return false;
         
-    }
-}
+//     }
+// }
 function userValidate(){
+  re = /^\w+$/;
  if(username.value.trim()==""){
   setErrorFor(username,'username cannot be empty');
 }
-else if(username.value.length<5)
-{setErrorFor(username,'minimum 5 characters')}
+
+  else if(!re.test(username.value)) 
+    {setErrorFor(username, "Error: Username must contain only letters, numbers and underscores!");
+    username.focus();
+  
+  }
+
 else{ 
  setSuccessFor(username)
 
@@ -162,8 +168,8 @@ function setSuccessFor(input){
   formGroup.className='form-group success';
 }
 
-submit.onsubmit = function() {
-  return match(username.value,phone.value,email.value,myInput.value,password2.value,userValidate,phoneValidate,validateEmail,validatePass,confirmPass);
+// submit.onsubmit = function() {
+//   return match(username.value,phone.value,email.value,myInput.value,password2.value,userValidate,phoneValidate,validateEmail,validatePass,confirmPass);
   
-}
+// }
 
