@@ -21,11 +21,12 @@
         border: 2px solid rgb(75, 105, 93);
        background-color:white;
        padding: 10px 50px 50px 50px;
-      position: relative;
+      /* position: relative; */
         border-radius: 30px;
         width:40rem;
         min-width:80%;
         margin: auto;
+        justify-content: center;
         margin-top: 30vh;
        }
   
